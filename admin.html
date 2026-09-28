@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Akram PhoneLoc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body">
+    <header class="topbar admin-header">
+      <div class="container nav">
+        <div class="brand">
+          <span class="logo">A</span>
+          <div>
+            <h3>Akram PhoneLoc</h3>
+            <small>Administration</small>
+          </div>
+        </div>
+
+        <nav class="menu">
+          <a href="index.html">Accueil</a>
+          <a href="admin.html" class="btn btn-small">Actualiser</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <div class="container admin-layout">
+        <section class="admin-panel">
+          <div class="section-head left">
+            <span class="tag">Ajouter un produit</span>
+            <h2>Nouvel appareil</h2>
+          </div>
+
+          <form id="productForm" class="admin-form">
+            <div class="input-group">
+              <label for="name">Nom du téléphone</label>
+              <input type="text" id="name" name="name" placeholder="Ex: iPhone 13 Pro" required />
+            </div>
+
+            <div class="input-group-row">
+              <div class="input-group">
+                <label for="brand">Marque</label>
+                <input type="text" id="brand" name="brand" placeholder="Ex: Apple" required />
+              </div>
+
+              <div class="input-group">
+                <label for="price">Prix (DZD)</label>
+                <input type="number" id="price" name="price" placeholder="29990" required />
+              </div>
+            </div>
+
+            <div class="input-group-row">
+              <div class="input-group">
+                <label for="condition">État</label>
+                <select id="condition" name="condition">
+                  <option value="Neuf">Neuf</option>
+                  <option value="Très bon état">Très bon état</option>
+                  <option value="Bon état">Bon état</option>
+                  <option value="Occasion">Occasion</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="category">Catégorie</label>
+                <select id="category" name="category">
+                  <option value="Vente">Vente</option>
+                  <option value="Échange">Échange</option>
+                  <option value="Réparation">Réparation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="image">URL de l’image</label>
+              <input type="url" id="image" name="image" placeholder="https://..." required />
+            </div>
+
+            <div class="input-group">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" rows="4" placeholder="Description du téléphone" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enregistrer le produit</button>
+          </form>
+        </section>
+
+        <section class="admin-panel">
+          <div class="section-head left">
+            <span class="tag">Liste</span>
+            <h2>Produits enregistrés</h2>
+          </div>
+
+          <div id="adminProducts" class="admin-product-list"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
